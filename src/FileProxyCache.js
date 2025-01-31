@@ -13,6 +13,7 @@
  * CodePen: https://codepen.io/jasonmayes
  *********************************************************************/
 
+import MD5 from '/MD5.js';
 import fetchInChunks from '/FetchInChunks.js';
 
 let FileProxyCache = function () {
