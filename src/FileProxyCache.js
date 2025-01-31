@@ -14,7 +14,7 @@
  *********************************************************************/
 
 import MD5 from '/MD5.js';
-import fetchInChunks from '/FetchInChunks.js';
+import FetchInChunks from '/FetchInChunks.js';
 
 let FileProxyCache = function () {
   // Default shard size is 128MB.
