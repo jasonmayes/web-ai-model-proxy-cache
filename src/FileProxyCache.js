@@ -23,7 +23,7 @@ let FileProxyCache = function () {
   let cacheDebug = false;
 
 
-  function setName(name) {
+  function setCacheName(name) {
     cacheName = name;
   }
 
@@ -115,7 +115,7 @@ let FileProxyCache = function () {
   };
   return {
     loadFromURL: fetchFile,
-    setName: setName,
+    setCacheName: setCacheName,
     setShardSize: setShardSize,
     enableDebug: enableDebug
   };
