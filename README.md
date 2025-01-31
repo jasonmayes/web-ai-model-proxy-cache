@@ -2,7 +2,7 @@
 
 Retrieve large (GBs) Web AI binary model files from the cloud to cache locally as sharded blobs to then load faster on 2nd page load. Returns stored file as a data URL to use as if you were sending a URL to the orignal function that needed to load the URL in the first place.
 
-##Usage
+## Usage
 
 ```
 import FileProxyCache from 'https://cdn.jsdelivr.net/gh/jasonmayes/web-ai-model-proxy-cache@main/FileProxyCache.min.js';
