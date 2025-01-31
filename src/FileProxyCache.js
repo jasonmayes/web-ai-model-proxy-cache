@@ -68,11 +68,18 @@ let FileProxyCache = function () {
   async function fetchAndCacheFile(url, progressCallback) {
     let blob = undefined;
     try {
-      blob = await FetchInChunks(url, {
-        chunkSize: 5 * 1024 * 1024,
-        maxParallelRequests: 10,
-        progressCallback: (done, total) => (progressCallback('Loading Web AI Model file: ' + Math.round((done / total) * 100) + '%'))
-      });
+      if (progressCallback) {
+        blob = await FetchInChunks(url, {
+          chunkSize: 5 * 1024 * 1024,
+          maxParallelRequests: 10,
+          progressCallback: (done, total) => (progressCallback('Loading file: ' + Math.round((done / total) * 100) + '%'))
+        });
+      } else {
+        blob = await FetchInChunks(url, {
+          chunkSize: 5 * 1024 * 1024,
+          maxParallelRequests: 10
+        });
+      }
       if (cacheDebug) {
         console.log('Caching: ' + url);
       }
