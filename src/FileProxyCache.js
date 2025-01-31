@@ -68,7 +68,7 @@ let FileProxyCache = function () {
   async function fetchAndCacheFile(url, progressCallback) {
     let blob = undefined;
     try {
-      blob = await fetchInChunks(url, {
+      blob = await FetchInChunks(url, {
         chunkSize: 5 * 1024 * 1024,
         maxParallelRequests: 10,
         progressCallback: (done, total) => (progressCallback('Loading Web AI Model file: ' + Math.round((done / total) * 100) + '%'))
