@@ -1,4 +1,4 @@
-import fetchInChunks from '/fetchInChunks.js';
+import fetchInChunks from '/FetchInChunks.js';
 
 let FileProxyCache = function () {
   // Default shard size is 128MB.
@@ -104,3 +104,5 @@ let FileProxyCache = function () {
     enableDebug: enableDebug
   };
 }();
+
+export default FileProxyCache;
