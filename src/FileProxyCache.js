@@ -1,3 +1,18 @@
+/********************************************************************* 
+ * File Proxy Cache Utility Library by Jason Mayes 2025.
+ *
+ * This was primarily made for caching large (GBs) Web AI Model files.
+ * However it can likely be used for other binary files too.
+ * For docs see https://github.com/jasonmayes/web-ai-model-proxy-cache
+ *--------------------------------------------------------------------
+ * Connect with me on social if any questions or comments:
+ *
+ * LinkedIn: https://www.linkedin.com/in/webai/
+ * Twitter / X: https://x.com/jason_mayes
+ * Github: https://github.com/jasonmayes
+ * CodePen: https://codepen.io/jasonmayes
+ *********************************************************************/
+
 import fetchInChunks from '/FetchInChunks.js';
 
 let FileProxyCache = function () {
