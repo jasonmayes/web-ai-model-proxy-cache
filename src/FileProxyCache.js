@@ -117,7 +117,7 @@ let FileProxyCache = function () {
           }
           
           let concatBlob = new Blob(blobParts, {type: 'binary/octet-stream'});
-          return await URL.createObjectURL(concatBlob);
+          return URL.createObjectURL(concatBlob);
         }
       }
     } catch (err) {
