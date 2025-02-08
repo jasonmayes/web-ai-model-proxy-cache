@@ -108,13 +108,17 @@ let FileProxyCache = function () {
       } else {
         const file = await response.blob();
         let n = parseInt(await file.text());
-        for (let i = 0; i < n; i++) {
-          const part = await MODEL_CACHE.match(MD5_FILE_HASH + '-' + i);
-          blobParts.push(await part.blob());
+        if (n === 0) {
+          return await fetchAndCacheFile(url, progressCallback);
+        } else {
+          for (let i = 0; i < n; i++) {
+            const part = await MODEL_CACHE.match(MD5_FILE_HASH + '-' + i);
+            blobParts.push(await part.blob());
+          }
+          
+          let concatBlob = new Blob(blobParts, {type: 'binary/octet-stream'});
+          return await URL.createObjectURL(concatBlob);
         }
-        
-        let concatBlob = new Blob(blobParts, {type: 'binary/octet-stream'});
-        return await URL.createObjectURL(concatBlob);
       }
     } catch (err) {
       console.error(err);
