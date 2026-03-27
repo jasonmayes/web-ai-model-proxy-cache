@@ -7,7 +7,7 @@ Retrieve large (GBs) Web AI binary model files from the cloud to cache locally a
 ```js
 import FileProxyCache from 'https://cdn.jsdelivr.net/gh/jasonmayes/web-ai-model-proxy-cache@main/FileProxyCache.min.js';
 
-// An function to call with progress updates.
+// A function to call with progress updates.
 function fileProgressCallback(textUpdate) {
   YourHTMLElement.innerText = textUpdate;
 }
